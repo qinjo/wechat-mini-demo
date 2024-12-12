@@ -1,0 +1,8 @@
+{
+  "pages": ["pages/home/home"],
+  "window": {
+    "navigationBarBackgroundColor": "#ff0000",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "小程序 Demo"     
+  }
+}
