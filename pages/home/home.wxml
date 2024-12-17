@@ -1,26 +1,8 @@
 <view>
-    <button class="weui-btn weui-btn_primary">
-    主操作
-    </button>
-    <button class="weui-btn weui-btn_primary weui-btn_loading">
-    <i class="weui-loading"></i>正在加载
-   </button>
-   <button class="weui-btn weui-btn_primary weui-btn_disabled">
-    禁止点击
-   </button>
-    <image src="https://picsum.photos/200"></image>
-    <swiper
-    indicator-dots="{{true}}"  
-    autoplay="{{true}}"
-    style="width: 750rpx;">
-    <swiper-item>
-      <image src="https://picsum.photos/200"></image>
-    </swiper-item>
-    <swiper-item>
-      <image src="https://picsum.photos/250"></image>
-    </swiper-item>
-    <swiper-item>
-      <image src="https://picsum.photos/300"></image>
-    </swiper-item>
-  </swiper>
+  <text class="title">hello {{name}}</text>
+  <image src="{{url}}"></image>
+  <button open-type="getUserInfo" bind:getuserinfo="buttonHandler">
+    授权获取用户个人信息
+  </button>
 </view>
+ 
