@@ -1,14 +1,24 @@
 Page({
-  data: { 
-    name: "",
-    url: '',
-   },
-  buttonHandler(event) {
-    console.log('<===== event', event.detail.userInfo.avatarUrl, '=====>');
-    if (!event.detail.userInfo) return;
-    this.setData({
-      name: event.detail.userInfo.nickName,
-      url: event.detail.userInfo.avatarUrl
-    });
+  data: {
+    canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
-});
+  onLoad: function() {
+    // 查看是否授权
+    wx.getSetting({
+      success (res){
+        if (res.authSetting['scope.userInfo']) {
+          console.log('<===== 333', 333, '=====>');
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+          wx.getUserInfo({
+            success: function(res) {
+              console.log(res.userInfo)
+            }
+          })
+        }
+      }
+    })
+  },
+  bindGetUserInfo (e) {
+    console.log(e.detail.userInfo)
+  }
+})

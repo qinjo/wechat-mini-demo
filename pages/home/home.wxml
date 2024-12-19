@@ -1,7 +1,7 @@
 <view>
-  <text class="title">hello {{name}}</text>
-  <image src="{{url}}"></image>
-  <button open-type="getUserInfo" bind:getuserinfo="buttonHandler">
+  <open-data type="userAvatarUrl"></open-data>
+<open-data type="userNickName"></open-data>
+  <button open-type="getUserInfo" bind:getuserinfo="bindGetUserInfo">
     授权获取用户个人信息
   </button>
 </view>
